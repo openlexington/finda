@@ -11,6 +11,7 @@ define(function(require, exports, module) {
   var facetTemplate = require('text!templates/facet.html');
   var facetControlsTemplate = require('text!templates/facetControls.html');
   var extraResourcesTemplate = require('text!templates/extraResources.html');
+  var aboutTemplate = require('text!templates/about.html');
 
   var templates = {
     welcome: Handlebars.compile(welcomeTemplate),
@@ -18,7 +19,8 @@ define(function(require, exports, module) {
     form: Handlebars.compile(formTemplate),
     facet: Handlebars.compile(facetTemplate),
     facetControls: Handlebars.compile(facetControlsTemplate),
-    extraResources: Handlebars.compile(extraResourcesTemplate)
+    extraResources: Handlebars.compile(extraResourcesTemplate),
+    about: Handlebars.compile(aboutTemplate)
   };
 
   module.exports = flight.component(function () {
@@ -60,6 +62,7 @@ define(function(require, exports, module) {
         this.on('.js-next-prev', 'click', this.nextPrevHandler);
         this.on('.js-no-treatment', 'click', this.showNoTreatment);
         this.on('.js-not-sure-treatment', 'click', this.showNoTreatment);
+        this.on('.js-about-app', 'click', this.showAbout);
         return;
       }
 
@@ -205,6 +208,10 @@ define(function(require, exports, module) {
       this.$node.html(templates.extraResources());
     };
 
+    this.showAbout = function() {
+      this.$node.html(templates.about());
+    };
+
     // defaultAttrs is now deprecated in favor of 'attributes', but our
     //    version of flight still uses this.
     this.defaultAttrs({
@@ -216,6 +223,7 @@ define(function(require, exports, module) {
       this.on(document, 'config', this.configureFacets);
       this.on(document, 'dataFacets', this.displayFacets);
       this.on(document, 'uiShowResults', this.showResults);
+      this.on(document, 'uiShowAbout', this.showAbout);
       this.on(document, 'uiFacetChangeRequest', function(ev, facet) {
         var input = $('input[name=' + facet.name + ']');
         input.prop('checked', true);

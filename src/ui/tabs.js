@@ -16,6 +16,10 @@ define(function(require, exports, module) {
       this.$node.find('#results-tab').on('click', function() {
         this.trigger('uiShowResults', {dontClickTab: true});
       }.bind(this));
+
+      this.$node.find('#about-tab').on('click', function() {
+        this.trigger('uiShowAbout', {dontClickTab: false});
+      }.bind(this));
     };
 
     this.after('initialize', function() {
