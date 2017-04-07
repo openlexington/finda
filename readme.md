@@ -1,7 +1,6 @@
-# Get Help Lex [![Build Status](https://travis-ci.org/openlexington/gethelplex.svg)](https://travis-ci.org/openlexington/gethelplex) [![Stories in Ready](https://badge.waffle.io/openlexington/gethelplex.svg?label=ready&title=Ready)](http://waffle.io/openlexington/gethelplex)
+# Get Help Osage [![Build Status](https://travis-ci.org/openlexington/gethelplex.svg)](https://travis-ci.org/openlexington/gethelplex) [![Stories in Ready](https://badge.waffle.io/openlexington/gethelplex.svg?label=ready&title=Ready)](http://waffle.io/openlexington/gethelplex)
 
 ## I want to help develop Finda
-
 Great! Quick setup:
 
     npm install
@@ -11,9 +10,12 @@ Great! Quick setup:
 Visit [localhost:8080](http://localhost:8080/) to see the app.
 
 A bit more background:
+The project is based on Code for Lexington's GetHelpLex, which in turn is based on Code for Boston's [finda](https://github.com/codeforboston/finda) project. 
 
-The project is based on Code for Boston's [finda](https://github.com/codeforboston/finda) project. In Lexington we've customized it for our needs:
+Osage Nation customized it with:
+* WIP
 
+Lexington customized it with:
  * The facilities [are read](https://github.com/openlexington/gethelplex/blob/gh-pages/src/data/geojson.js#L10) from a Google spreadsheet using the [Tabletop.js](https://github.com/jsoma/tabletop) library. This way our stakeholders have realtime ability to update facilities.
  * We hacked the [facet handling](https://github.com/openlexington/gethelplex/blob/gh-pages/src/ui/facet.js) to guide the user through a 'survey'. It narrows down the facilities based on type of treatment, the insurance they accept, etc.
 
