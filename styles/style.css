@@ -58,7 +58,7 @@ body > div.container {
 }
 
 .navbar .navbar-header .navbar-toggle {
-  margin-top: -8px;
+  margin-top: 0px;
 }
 
 .navbar .navbar-brand {
@@ -67,6 +67,20 @@ body > div.container {
   font-weight: 300;
   font-size: 27px;
   color: #25AAE1;
+}
+
+/* Extra top padding for nav menu - Not Small devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+  #finda-navbar-collapse {
+    padding-top: 4px;
+  }
+}
+
+/* Extra bottom margin for nav menu - Small devices (phones, 768px and lower) */
+@media (max-width: 767px) { 
+  #finda-navbar-collapse {
+    margin-bottom: 30px;
+  }
 }
 
 .navbar-form .btn {

@@ -27,7 +27,9 @@ define(function(require, exports, module) {
         "phone_numbers": csvRow.phone_numbers,
         "address": csvRow.address + " " + csvRow.city + ", Kentucky",
         "city": csvRow.city,
-        "county": csvRow.county
+        "county": csvRow.county,
+        "web_url": csvRow.web_url,
+        "additional_notes": csvRow.additional_notes
       };
 
       _.each(facetValues, function(facet, facetValue) {
@@ -57,6 +59,8 @@ define(function(require, exports, module) {
       var facetValues = {
         outpatient_offered: "facility_type",
         residential_offered: "facility_type",
+        medical_detox_offered: "facility_type",
+        assessment_offered: "facility_type",
         outpatient_intensive: "out_patient",
         outpatient_services: "out_patient",
         outpatient_mat: "out_patient",
