@@ -1,5 +1,13 @@
 
 
+      #ghl-navbar {
+        height:50px !important;
+      }
+
+      #ghl-navbar ul.nav {
+        font-size: 12px;
+      }
+      
       .navbar-header .navbar-nav>li, .navbar-header .navbar-nav{
         float: left !important;
       }
