@@ -9,7 +9,7 @@ define(function(require, exports, module) {
       // load the geojson
       Tabletop.init( {
         // key: '1oWIrEg77ZSOiYGUA6H4b1wlvtC8pIrvdznQDcbLEUPg',
-        key: '1ubx07oylGxk5FDIjMnQo4cMNBd3a8QYiPm27rWuyByI',
+        key: '1LZRal5xPL6fe3BOlBBHc8RdsOPCXQEc5vers2dsg1M8',
         callback: function(data) {
           var facetTitles = data.splice(0, 1)[0];
           // throw away survey rows

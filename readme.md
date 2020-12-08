@@ -17,7 +17,7 @@ The project is based on Code for Boston's [finda](https://github.com/codeforbost
  * The facilities [are read](https://github.com/openlexington/gethelplex/blob/gh-pages/src/data/geojson.js#L10) from a Google spreadsheet using the [Tabletop.js](https://github.com/jsoma/tabletop) library. This way our stakeholders have realtime ability to update facilities.
  * We hacked the [facet handling](https://github.com/openlexington/gethelplex/blob/gh-pages/src/ui/facet.js) to guide the user through a 'survey'. It narrows down the facilities based on type of treatment, the insurance they accept, etc.
 
-Let's say you want to new information about facilities like "do they let you smoke." You would want to add a column to the [facilities spreadsheet](https://docs.google.com/spreadsheets/d/1ubx07oylGxk5FDIjMnQo4cMNBd3a8QYiPm27rWuyByI/edit#gid=145432932) called smoking_permited (or similar):
+Let's say you want to new information about facilities like "do they let you smoke." You would want to add a column to the [facilities spreadsheet](https://docs.google.com/spreadsheets/d/1LZRal5xPL6fe3BOlBBHc8RdsOPCXQEc5vers2dsg1M8/edit#gid=145432932) called smoking_permited (or similar):
 
 * make a copy of the existing spreadsheet
 * copy paste the new spreadsheet's key to the [Tabletop.js init](https://github.com/openlexington/gethelplex/blob/gh-pages/src/data/geojson.js#L12)
