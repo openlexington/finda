@@ -320,7 +320,6 @@ body > div.container {
 
 /* clear the navbar when anchored to in url */
 #list .selected-facility {
-  margin-top: 50px;
   border-right: 20px solid #69579c;
 }
 
