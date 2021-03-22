@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title data-project="name">GetHelpLex</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="GetHelpLex is a resource for people seeking facilities and services for substance use disorder (substance abuse/addiction) in or around Lexington, Kentucky.">
+    <meta name="author" content="Code for Boston and OpenLexington">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <link rel="stylesheet" type="text/css" href="styles/properties.css">
+    <link rel="stylesheet" type="text/css" href="styles/navbar_header.css">
+  </head>
+
+  <body>
+    <!-- Google Tag Manager -->
+    <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-M5B9K5"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-M5B9K5');</script>
+    <!-- End Google Tag Manager -->
+
+    <nav class="navbar navbar-default" id="ghl-navbar" role="navigation">
+      <div class="container-fluid">
+         <!--Brand and Toggle get grouped for better mobile display-->
+        <div class="navbar-header" style="width:100%">
+          <a href=""><img class="brand_image" src="img/GetHelpLextype.png" height="50px" style="margin-top:-8px;" alt="GetHelpLex"></a>
+          <a class="navbar-brand" href="">
+            <!-- GetHelpLex -->
+            &nbsp;
+            <!-- this is a hack. we'll fix css later. -->
+          </a> <!-- This is the name of the map -->
+          <img src="img/spinner.gif" id="message" style="display:none;" width="20px">
+          <ul class="nav navbar-nav navbar-right" style="margin-top:0px;">
+            <li class="home-nav-entry">
+              <a href="/" >
+                <img src="img/home-solid.svg" class="header-nav-icon home-nav-icon" style="" alt="">
+                Home
+              </a>
+            </li>
+            <li>
+              <img src="img/info-circle-solid.svg" class="header-nav-icon info-nav-icon" style="" alt="">
+              <a href="#" data-toggle="modal" data-target="#about">Info</a>
+            </li>
+            <li>
+              <img src="img/bullhorn-solid.svg" class="header-nav-icon feedback-nav-icon" style="" alt="">
+              <a href="#" data-toggle="modal" data-target="#feedback-modal">Feedback</a>
+            </li>
+          </ul>
+        </div>
+      </div><!-- /.container-fluid -->
+    </nav>
+
+    <div class="container">
+      <div class="left-column">
+        <nav id="finda-tabs">
+          <ul class="nav nav-tabs survey-tabs control-tabs">
+            <li role="presentation" class="active"><a data-toggle="tab" href="#facets" id="facet-click">Search Options</a></li>
+            <li role="presentation"><a data-toggle="tab" id="results-tab" href="#listTab">View Facilities</a></li>
+          </ul>
+        </nav>
+
+        <div class="tab-content">
+          <div id="facets" class="tab-pane control control-survey active"></div>
+          <div id="listTab" class="tab-pane control control-sidebar">
+            <div class="list-filters">
+              <select id="select_county" class="form-control">
+                <option value="" selected>All Counties</option>
+              </select>
+              <div class="btn btn-default btn-print" title="Print" onClick="window.print();">
+                <img src="img/print-solid.svg" class="print-icon" alt="">
+                Print
+              </div>
+            </div>
+            <div id="list"></div>
+          </div>
+          <a href="#" id="back-to-top">Back to top</a>
+        </div>
+      </div>
+      <div id="map" class="right-column" style="display:none"></div>
+    </div>
+
+<!-- Twelve Step Modal -->
+    <div class="modal fade" id="twelveStep" tabindex="-1" role="dialog" aria-labelledby="twelveStepLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="twelveStepLabel">TWELVE STEP PROGRAMS</span></h4>
+            </div>
+            <div class="modal-body">
+            <h3><strong>Alcoholics Anonymous</strong></h3>
+            <p>To find a meeting anywhere in Kentucky:
+            <a href="http://www.aa.org/pages/en_US/find-aa-resources">http://www.aa.org</a></p>
+
+            <h3><strong>Bluegrass Intergroup</strong></h3>
+            <p>Lexington, KY<br>
+            Phone/FAX: <a href="tel:8592551212">859-225-1212</a><br>
+            <a href="www.bluegrassintergroup.org">www.bluegrassintergroup.org</a></p>
+
+            <h3><strong>Bowling Green Central Office</strong></h3>
+            <p>Bowling Green, KY<br>
+            Main: <a href="tel:2707825267">270-782-5267</a></p>
+
+            <h3><strong>Northern Kentucky Central Office</strong></h3>
+            <p>Covington, KY<br>
+            Main: <a href="tel:8594917181">859-491-7181</a><br>
+            <a href="www.home.fuse.net/nkyaa">www.home.fuse.net/nkyaa</a></p>
+
+            <h3><strong>Western Kentucky Intergroup</strong></h3>
+            <p>Gilbertsville, KY<br>
+            Toll Free: <a href="tel:8006066047">800-606-6047</a><br>
+            Main: <a href="tel:2703627141">270-362-7141</a></p>
+
+            <h3><strong>Greater Louisville Intergroup, Inc.</strong></h3>
+            <p>Louisville, KY<br>
+            Main: <a href="tel:5025821849">502-582-1849</a><br>
+            <a href="www.louisvilleaa.org">www.louisvilleaa.org</a></p>
+
+            <h3><strong>Intergroup 17</strong></h3>
+            <p>Owensboro, KY<br>
+            Main: <a href="tel:2706830371">270-683-0371</a></p>
+
+            <h3><strong>Narcotics Anonymous</strong></h3>
+            <p><a href="https://www.na.org/">https://www.na.org/</a><br><br>
+            To find a meeting anywhere in Kentucky-Kentuckiana Region:<br>
+            <a href="http://www.krscna.org">http://www.krscna.org</a></p>
+
+            <h3><strong>Pennyrile Area (Paducah &amp; Hopkinsville)</strong></h3>
+            <p><a href="http://www.na-pana.org">http://www.na-pana.org</a></p>
+
+            <h3><strong>Southern Zonal Forum</strong></h3>
+            <p><a href="http://www.szfna.org">http://www.szfna.org</a></p>
+
+            <h3><strong>Across the River Area (Henderson)</strong></h3>
+            <p>Phone: <a href="tel:8776425831">877-642-5831</a><br>
+            <a href="">http://www.atrana.org/</a></p>
+
+            <h3><strong>South Central Kentucky Area (Bowling Green, Glasgow, Scottsville, Franklin)</strong></h3>
+            <p>Phone: <a href="tel:8669012849">866-901-2849</a><br>
+            <a href="http://sckana.net">http://sckana.net</a></p>
+
+            <h3><strong>Louisville Area  </strong></h3>
+            <p>Phone: <a href="tel:5024994423">502-499-4423</a><br>
+            <a href="http://nalouisville.org/">http://nalouisville.org/</a></p>
+
+            <h3><strong>Grassroots Area (Campton, Inez, Salyersville)</strong></h3>
+            <p>Phone: <a href="tel:8553198869">855-319-8869</a><br>
+            <a href="http://www.grassrootsna.org">http://www.grassrootsna.org</a></p>
+
+            <h3><strong>Bluegrass-Appalachian Region (Central Kentucky)</strong></h3>
+            <p>Phone: <a href="tel:8592534673">859-253-4673</a><br>
+            <a href="http://www.barcna.com">http://www.barcna.com</a></p>
+
+            <h3><strong>Kentucky Survivors Area (Lexington)</strong></h3>
+            <p>Phone: <a href="tel:8592534673">859-253-4673</a><br>
+            <a href="http://www.kentuckysurvivors.com">http://www.kentuckysurvivors.com</a></p>
+
+            <h3><strong>Medication Assisted Therapy (MAT) 12 Step Support Group</strong></h3>
+            <p>
+              Tuesdays from 6:30-7:30 p.m.
+              <br>1351 Newtown Pike
+              <br>Building 5, First Floor
+              <br>Lexington, KY 40511
+              <br>Phone: <a href="tel:8592276459">859-227-6459</a>
+              <br><a href="http://bluegrass.org">http://bluegrass.org</a>
+            </p>
+
+            <hr>
+
+            <h3><strong>Double Trouble in Recovery</strong></h3>
+            <p>A recovery group for people recovering from mental illness and substance abuse.</p>
+
+            <h3><strong>Participation Station</strong></h3>
+            <p>869 Sparta Court, Lexington, KY<br>
+            Thursdays 12-1:00 p.m.<br>
+            Sunday 3-4:00 p.m.<br>
+            Phone: <a href="tel:8594926997">(859) 492-6997</a></p>
+
+            <h3><strong>The Community Inn</strong></h3>
+            <p>824 Winchester Road, Lexington, KY<br>
+            Thursdays 7:30-8:30 p.m.<br>
+            Phone: <a href="tel:8593120707">(859) 312-0707</a></p>
+
+            <h3><strong>Eastern State Hospital</strong></h3>
+            <p>627 West Fourth Street, Lexington, KY<br>
+            Participation in the meeting is limited to current hospital patients only</p>
+
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+<!-- More Information Modal -->
+    <div class="modal fade" id="about" tabindex="-1" role="dialog" aria-labelledby="aboutLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="aboutLabel">About <span data-project="name">GetHelpLex</span></h4>
+          </div>
+          <div class="modal-body">
+            <div><strong>GetHelpLex</strong> is a resource for people seeking facilities and services for substance use disorder (substance abuse/addiction) in and around Lexington, Kentucky. <a href="https://github.com/openlexington/finda">GetHelpLex</a> is an open-source project. GHL is an adaptation of Code for Boston's <a href="https://github.com/codeforboston/finda">Finda project</a>. The source code for both Finda and GHL are publically available on GitHub.</div>
+            <h5>Please <a href="#" data-toggle="modal" data-target="#feedback-modal">send feedback, ideas, and bug reports here</a>.</h5>
+
+            <hr>
+
+            <h3>Application creation and support from:</h3>
+            <h4>LFUCG Substance Abuse and Violence Intervention Program</h4>
+            <p><a href="http://www.lexingtonky.gov/index.aspx?page=3628">The Substance Abuse and Violence Intervention (SAVI) Program</a> works with community stakeholders and advocates in Lexington to increase programming and opportunities that reduce drug related violence by teens and young adults; decrease the stigma that inhibits recovery; advocate for and increase access to effective substance abuse treatment programming.</p>
+
+            <h4>Voices of Hope – Lexington, Inc.</h4>
+            <p>Voices of Hope – Lexington is a non-profit organization dedicated to creating a positive environment to help people addicted to drugs and alcohol enter and flourish in recovery.</p>
+
+            <h4>OpenLexington</h4>
+            <p><a href="http://openlexington.org">OpenLexington</a> is a volunteer group of civic-minded software developers, designers, urban planners, citizen activists, data geeks and more. Part of the <a href="http://brigade.codeforamerica.org">Code for America Brigade</a> program, we work with LFUCG, Fayette County, and local communities to build open-source civic apps, open public data sources, and generally help to leverage technology for use in the public sphere.</p>
+
+            <h4>LexLadiesCode</h4>
+            <p><a href="http://lexladiescode.org">LexLadiesCode</a> is a women's coding club based in Lexington, Kentucky gathered to increase the visibility of and possibilities for women in technology.</p>
+
+            <h4>Code for Boston</h4>
+            <p><a href="http://stage.codeforboston.org/">Code for Boston</a> aims to provide a 'center of gravity' for grassroots, community-driven civic innovation in the Greater Boston area. Our work includes building apps, community organizing, policy initiatives, qualitative research, and more, and we hope that volunteers of all types will join our community.</p>
+
+            <h5>With donations from:</h5>
+            <p>
+              <a href="https://www.browserstack.com/">Browserstack</a> - A cross browser testing tool.
+            </p>
+            <p>
+              David Caldwell, <a href="http://balancecreative.net/">Balance Creative Advertising, Design and Marketing</a> for the creation and donation of the GetHelpLex logo.
+            </p>
+
+            <h5>Special thanks to:</h5>
+            <p>David Maynard, MA, LPCC, Addiction Specialist, University of Kentucky Trauma Services</p>
+
+            <hr>
+
+            <h4>Want a copy of our data?</h4>
+            <p>
+              <a href="https://docs.google.com/spreadsheets/d/1LZRal5xPL6fe3BOlBBHc8RdsOPCXQEc5vers2dsg1M8/export?format=csv" target="_blank"><button class="btn btn-default">Download</button></a>
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+<!-- Loading Modal -->
+    <div class="modal" id="loading" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <div class="modal-body">
+            <h4></h4>
+          </div>
+        </div>
+      </div>
+    </div>
+<!-- Feedback Modal -->
+    <div class="modal fade" id="feedback-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="myModalLabel">Send us your feedback!</h4>
+          </div>
+          <div class="modal-body">
+            <div class="alert alert-success js-thank-you" role="alert" style="display:none">Your feedback has been sent!</div>
+            <div class="alert alert-danger js-error" style="display:none">We apologize, there was a problem sending the feedback. Please email <a class="js-error-email" href="#">gethelplex@lexingtonky.gov</a> instead.</div>
+            A few things to remember:
+            <ul>
+              <li>If this is an emergency, please dial <a href="tel:911">911</a></li>
+              <li>This is not for assessment or diagnosis and is not always monitored</li>
+              <li>Please do not add any sensitive personal information</li>
+            </ul>
+            <form id="feedback-form" class="form-horizontal" action="#" role="form" method="post">
+              <label>Message:</label>
+              <textarea id="feedback-text" class="form-control" name="message" required="required" aria-describedby="feedback-label"></textarea>
+              <label>Email (optional):</label>
+              <input id="feedback-email" class="form-control" type="email" name="email" placeholder="yourname@gmail.com">
+              <div style="margin-top:20px;margin-bottom:20px;">
+                <label><input type="checkbox" required="required"> I have read the
+                  <a data-toggle="collapse" href="#feedback-disclaimer" aria-expanded="false" aria-controls="disclaimer">disclaimer</a>
+                </label>
+              </div>
+              <button type="submit" class="js-submit btn btn-primary">Send</button>
+              <button type="button" class="btn btn-cancel">Cancel</button>
+            </form>
+            <div class="collapse well" id="feedback-disclaimer" style="margin-top:20px;">
+              <p>GetHelpLex is a tool to help you find a substance abuse treatment program for yourself or others. It's an informational tool ONLY. <strong>If you are experiencing a medical emergency, please call <a href="tel:911">911.</a></strong></p>
+
+              <p>Please remember that it is:</p>
+
+              <ul>
+                <li>NOT a diagnostic tool</li>
+                <li>NOT an assessment tool</li>
+                <li>NOT a substitute for substance use treatment services</li>
+              </ul>
+
+              <p><strong>No identifying information is being collected from your search.</strong></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+    <!--[if lt IE 9]>
+    <script src="lib/es5-shim.min.js"></script>
+    <script src="lib/es5-sham.min.js"></script>
+    <![endif]-->
+    <script type="text/javascript" data-main="src/script.js" src="lib/require.js"></script>
+    <script async src='https://tag.simpli.fi/sifitag/a41b3ff0-9597-0135-dddf-06659b33d47c'></script>
+  </body>
+</html>
