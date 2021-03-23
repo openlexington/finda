@@ -35,42 +35,123 @@
               <img src="img/info-circle-solid.svg" class="header-nav-icon info-nav-icon" style="" alt="">
               <a href="#" data-toggle="modal" data-target="#about">Info</a>
             </li>
-            <li>
+            <!-- <li>
               <img src="img/bullhorn-solid.svg" class="header-nav-icon feedback-nav-icon" style="" alt="">
               <a href="#" data-toggle="modal" data-target="#feedback-modal">Feedback</a>
-            </li>
+            </li> -->
           </ul>
         </div>
       </div><!-- /.container-fluid -->
     </nav>
 
-    <div class="container">
-      <div class="left-column">
-        <nav id="finda-tabs">
-          <ul class="nav nav-tabs survey-tabs control-tabs">
-            <li role="presentation" class="active"><a data-toggle="tab" href="#facets" id="facet-click">Search Options</a></li>
-            <li role="presentation"><a data-toggle="tab" id="results-tab" href="#listTab">View Facilities</a></li>
-          </ul>
-        </nav>
+    <div class="container" style="padding-top:20px;">
+      <div style="width: 600px; margin-left:auto;margin-right:auto;overflow-x: scroll;
+                  border: 1px solid #aaa;
+                  border-top-left-radius: 4px;
+                  border-top-right-radius: 4px;
+                  padding:20px;background-color: #fff;">
+        <!-- welcome -->  
+        <h1>Welcome to GetHelpLex</h1>
 
-        <div class="tab-content">
-          <div id="facets" class="tab-pane control control-survey active"></div>
-          <div id="listTab" class="tab-pane control control-sidebar">
-            <div class="list-filters">
-              <select id="select_county" class="form-control">
-                <option value="" selected>All Counties</option>
-              </select>
-              <div class="btn btn-default btn-print" title="Print" onClick="window.print();">
-                <img src="img/print-solid.svg" class="print-icon" alt="">
-                Print
-              </div>
-            </div>
-            <div id="list"></div>
-          </div>
-          <a href="#" id="back-to-top">Back to top</a>
+        <p>GetHelpLex is a resource for people seeking <strong>facilities and services</strong> for substance use disorder (substance abuse/addiction) in or around Lexington, Kentucky.</p>
+
+        <div class="well">
+        <h4>
+          Interested In Finding Services?
+        </h4>
+        <div class="welcome-options">
+          <ul class="welcome-options">
+            <li style="margin-bottom:5px;">
+            <a class="btn btn-default btn-block" href="https://findhelpnowky.org/ky">
+              Search Services at FindHelpNowKY
+            </a>
+            </li>
+            <li>
+            <a href="#" class="btn btn-default btn-block" data-toggle="modal" data-target="#twelveStep">
+              Local Twelve Step Programs
+            </a>
+            </li>
+          <ul>
         </div>
+        </div>
+
+        <h5><b><a data-toggle="collapse" href="#disclaimer" aria-expanded="false" aria-controls="disclaimer">
+        How to use GetHelpLex
+        </a></b></h5>
+        <div class="collapse in" id="disclaimer">
+          <p>GetHelpLex is a tool to help you find a substance abuse treatment program for yourself or others. It's an informational tool ONLY. <strong>If you are experiencing a medical emergency, please call <a href="tel:911">911.</a></strong></p>
+
+          <p>Please remember that it is:</p>
+
+          <ul>
+            <li>NOT a diagnostic tool</li>
+            <li>NOT an assessment tool</li>
+            <li>NOT a substitute for substance use treatment services</li>
+          </ul>
+
+          <p><strong>No identifying information is being collected from your search.</strong></p>
+        </div>
+
+        <h5><b><a data-toggle="collapse" href="#needle_exchange" aria-expanded="false" aria-controls="needle_exchange">
+        Lexington Needle Exchange Program
+        </a></b></h5>
+        <div class="collapse" id="needle_exchange">
+          <p>
+            The Lexington Needle Exchange Program is located at the Lexington-Fayette County Health Department 
+            (650 Newtown Pike, Lexington, KY.).  The exchange is available on Wednesdays from 3:00 p.m. to 6:00 p.m. 
+            and Fridays from 11:00 a.m. to 4:00 p.m.  and is anonymous.
+          </p>
+          <p> 
+            For additional information, please call 859-252-2371
+          </p>
+        </div>
+
+        <h5><b><a data-toggle="collapse" href="#naloxone" aria-expanded="false" aria-controls="naloxone">
+        No-Cost Naloxone In Lexington
+        </a></b></h5>
+        <div class="collapse" id="naloxone">
+          <p>
+            No cost naloxone is offered each Friday at the Lexington-Fayette County Health Department 
+            (650 Newtown Pike, Lexington, KY.) every Friday from 11:00 a.m. to 4:00 p.m.  In order to receive 
+            naloxone a person must bring photo identification and complete a 10 minute class on how to use it.
+          </p>
+          <p> 
+            For additional information, please call 859-252-2371
+          </p>
+          <p><i>
+            Free naloxone is subject to availability
+          </i></p>
+        </div>
+
+        <h5><b><a data-toggle="collapse" href="#caseys_law" aria-expanded="false" aria-controls="caseys_law">
+        Casey's Law
+        </a></b></h5>
+        <div class="collapse" id="caseys_law">
+          <p>
+            The Matthew Casey Wethington Act for Substance Abuse Intervention is named for Matthew Casey Wethington, 
+            who died in 2002 from a heroin overdose at the age of 23. Casey was an energetic young man who enjoyed 
+            life until it was “taken” by drugs. Casey never intended to become addicted to drugs when he used the first time. 
+            What he did not realize was that his using would progress from abusing to dependence and then to the disease of addiction. 
+            Although his parents tried to get him help, there was no law that could force someone into treatment because he was an 
+            adult. After Casey’s death his parents lobbied for a change. “Casey’s Law” is an involuntary treatment act for 
+            those who suffer from the disease of addiction.
+          </p>
+          <p> 
+            For more information on Casey’s Law, please visit the Kentucky Office of Drug Control Policy’s Casey Law page at the link below:<br>
+            <a href="https://odcp.ky.gov/Stop-Overdoses/Pages/Caseys-Law.aspx">https://odcp.ky.gov/Stop-Overdoses/Pages/Caseys-Law.aspx</a>.
+          </p>
+        </div>
+
+        <h5><b><a data-toggle="collapse" href="#legal-disclaimer" aria-expanded="false" aria-controls="legal-disclaimer">Legal disclaimer</a></b></h5>
+        <div class="collapse" id="legal-disclaimer">
+          LFUCG Office of Substance Abuse and Violence Intervention (SAVI) voluntarily provides the data on this website as a service to the public.  While SAVI attempts to keep the web information accurate and timely, this information is made available on an “as-is” basis. Please report any revisions or corrections to <a href="mailto:gethelplex@lexingtonky.gov">gethelplex@lexingtonky.gov</a> or <a href="tel:8592583834">859-258-3834</a>. LFUCG SAVI explicitly disclaims any representations and warranties, including but not limited to, sponsoring and/or guaranteeing the services provided by any agency or service provider on this website. If you are experiencing a medical emergency or suicidal, please call <a href="tel:911">911.</a>
+        </div>
+
+        <p>&nbsp;</p>
+
+
+        <!-- end welcome -->
       </div>
-      <div id="map" class="right-column" style="display:none"></div>
     </div>
 
 <!-- Twelve Step Modal -->
@@ -303,6 +384,8 @@
     <script src="lib/es5-shim.min.js"></script>
     <script src="lib/es5-sham.min.js"></script>
     <![endif]-->
-    <script type="text/javascript" data-main="src/script.js" src="lib/require.js"></script>
+    <!-- <script type="text/javascript" data-main="src/script.js" src="lib/require.js"></script> -->
+    <script type="text/javascript" src="lib/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="lib/bootstrap.min.js"></script>
   </body>
 </html>
